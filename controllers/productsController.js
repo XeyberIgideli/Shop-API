@@ -35,6 +35,8 @@ async function getAllProducts (req,res) {
     
     // Filter
     const filter = Object.assign({}, 
+        // && operatörü, koşulun doğru olduğu durumda sağ tarafındaki ifadeyi döndürür, 
+        // aksi takdirde false olarak değerlendirilen bir değer döndürür. 
         featured && { featured },
         company && { company },
         search && {name: {$regex: search,$options:'i'} },
